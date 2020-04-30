@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Comfortaa|Pacifico&display=swap" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px
+        }
+
+        .map-style {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        .sidebar {
+            position: absolute;
+            height: 100%;
+            width: 350px;
+            background-color: #f0f8ff08;
+            padding: 40px;
+            top: 0;
+            z-index: 4;
+            box-shadow: 2px 0px 7px -3px black;
+            font-family: 'Comfortaa', cursive;
+            color: #fff;
+            box-sizing: border-box;
+        }
+
+        #locations {
+            height: 35px;
+            width: 100%;
+            font-family: 'Anton', sans-serif;
+        }
+
+        #locations:active {
+            outline-color: transparent;
+        }
+
+        #stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .stat {
+            width: 45%;
+            height: 50px;
+            margin: 2px;
+            color: #fff;
+            border: 1px solid palevioletred;
+            padding: 5px;
+            box-sizing: border-box;
+            font-size: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #00000075;
+        }
+
+        .flags {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .information {
+            width: 100%;
+            background-color: #00000075;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .information p {
+            font-size: 10px
+        }
+    </style>
+
+    <title>Covid-19 Visualization App --- By Abiodun Mayowa</title>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div></div>
+        <form>
+            <select name="" id="locations">
+                <option value="">-- Select A Location --</option>
+            </select>
+        </form>
+        <img src="https://corona.lmao.ninja/assets/img/flags/ng.png" alt="" class="flags" />
+        <div id="stats">
+            <div class="stat">
+                <div>Country : </div>
+                <div class="country">loading ...</div>
+            </div>
+            <div class="stat">
+                <div>Cases : </div>
+                <div class="cases">loading ...</div>
+            </div>
+            <div class="stat">
+                <div>Today's Cases : </div><span class="tcases">loading ...</span>
+            </div>
+            <div class="stat">
+                <div>Critical : </div><span class="critical">loading ...</span>
+            </div>
+            <div class="stat">
+                <div>Active Case's : </div><span class="active_cases">loading ...</span>
+            </div>
+            <div class="stat">
+                <div>Recovered : </div><span class="recovered">loading ...</span>
+            </div>
+        </div>
+        <div class="information">
+            <p>Source API : https://corona.lmao.ninja</p>
+            <p>MAP : MapBox.com</p>
+            <p>GitHub : </p>
+            <p>URL : </p>
+        </div>
+        <div class="information">
+            <h5>About Me :</h5>
+            <p>Name : Abiodun Mayowa</p>
+            <p>Email : mayority11@gmail.com</p>
+        </div>
+    </div>
+    <div id="map" class="map-style"></div>
+</body>
+
+<script src="./scripts/summary.js"></script>
+<script src="./scripts/map.js"></script>
+
+</html>
